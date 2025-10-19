@@ -30,7 +30,27 @@ export const metadata: Metadata = {
   publisher: siteConfig.publisher,
   formatDetection: siteConfig.formatDetection,
   category: 'automotive',
-  
+
+  // Updated favicon configuration to match your actual files
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png' },
+    ],
+    other: [
+      {
+        rel: 'icon',
+        url: '/favicon-96x96.png',
+        sizes: '96x96',
+        type: 'image/png',
+      },
+    ],
+  },
+
   // Open Graph
   openGraph: {
     type: 'website',
@@ -118,6 +138,11 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {/* Additional favicon links for better browser support */}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body className="font-sans antialiased">
         <LoadingProvider>

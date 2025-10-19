@@ -1,6 +1,9 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import HeroSection from '@/components/HeroSection'
+// import { WhyChooseSection, ServiceAreasSection } from '@/components/WhyChooseSection, @/components/ServiceAreasSection'
+import { WhyChooseSection } from '@/components/WhyChooseSection'
+import { ServiceAreasSection } from '@/components/ServiceAreasSection'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -245,10 +248,11 @@ export default function Home() {
                     <div className="relative h-40 md:h-48 bg-gray-100 overflow-hidden">
                       <Image
                         src={service.image}
-                        alt={service.title}
+                        alt={`${service.title} - Dubai Recovery`}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-300"
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        priority={index < 2} // Prioritize loading first 2 images
                       />
                       {/* Emergency Badge */}
                       {service.emergency && (
@@ -320,93 +324,11 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Rest of your sections remain the same */}
         {/* Why Choose Us Section */}
-        <section className="py-12 md:py-20 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-100 rounded-full -translate-y-32 translate-x-32 opacity-50"></div>
-          <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-100 rounded-full translate-y-40 -translate-x-40 opacity-50"></div>
-          
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="text-center mb-12 md:mb-16">
-              <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-4 md:mb-6">
-                Why Choose <span className="text-blue-600">Dubai Recovery?</span>
-              </h2>
-              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                We're committed to providing the fastest, safest, and most reliable car recovery service in Dubai
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-              {whyChooseUs.map((item, index) => (
-                <div 
-                  key={index}
-                  className="text-center p-6 md:p-8 bg-white rounded-xl md:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group hover:transform hover:scale-105"
-                >
-                  <div className="w-16 h-16 md:w-20 md:h-20 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4 md:mb-6 group-hover:bg-blue-500 group-hover:text-white transition-colors duration-300">
-                    {item.icon}
-                  </div>
-                  <h3 className="text-lg md:text-2xl font-bold text-gray-800 mb-3 md:mb-4">{item.title}</h3>
-                  <p className="text-sm md:text-base text-gray-600 leading-relaxed">{item.description}</p>
-                </div>
-              ))}
-            </div>
-
-            {/* Trust Badges */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto mt-12 md:mt-16">
-              {stats.map((stat, index) => {
-                const Icon = stat.icon
-                return (
-                  <div key={index} className="text-center p-4 md:p-6 bg-white rounded-xl md:rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300">
-                    <div className="text-2xl md:text-3xl font-bold text-blue-600 mb-1 md:mb-2">{stat.number}</div>
-                    <div className="text-xs md:text-sm text-gray-600">{stat.label}</div>
-                  </div>
-                )
-              })}
-            </div>
-          </div>
-        </section>
+      <WhyChooseSection />
 
         {/* Coverage Areas Section */}
-        <section className="py-12 md:py-20 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12 md:mb-16">
-              <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-4 md:mb-6">
-                Service <span className="text-blue-600">Areas</span>
-              </h2>
-              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                Fast emergency response available in every neighborhood and major road in Dubai
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 max-w-6xl mx-auto">
-              {coverageAreas.map((area, index) => (
-                <div 
-                  key={index} 
-                  className="text-center p-3 md:p-4 bg-blue-50 rounded-lg md:rounded-xl hover:bg-blue-100 transition-colors duration-300 border border-blue-200 group"
-                >
-                  <div className="flex items-center justify-center space-x-1 md:space-x-2">
-                    <MapPin className="w-3 h-3 md:w-4 md:h-4 text-blue-500" />
-                    <span className="text-sm md:text-base font-medium text-gray-800 group-hover:text-blue-600 transition-colors">
-                      {area}
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-            
-            <div className="text-center mt-8 md:mt-12">
-              <Link 
-                href="/areas" 
-                className="inline-flex items-center space-x-2 md:space-x-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 md:py-4 px-6 md:px-8 rounded-xl md:rounded-2xl transition-all duration-300 transform hover:scale-105 text-sm md:text-base"
-                aria-label="View all service areas in Dubai"
-              >
-                <MapPin className="w-4 h-4 md:w-5 md:h-5" />
-                <span>View All Service Areas</span>
-                <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
-              </Link>
-            </div>
-          </div>
-        </section>
+      <ServiceAreasSection showMap={true} />
 
         {/* Testimonials Section */}
         <section className="py-12 md:py-20 bg-gradient-to-br from-blue-50 to-purple-50 relative overflow-hidden">
@@ -444,7 +366,7 @@ export default function Home() {
 
                   {/* Comment */}
                   <p className="text-sm md:text-base text-gray-600 italic mb-4 md:mb-6 leading-relaxed" itemProp="reviewBody">
-                    "{testimonial.comment}"
+                    &ldquo;{testimonial.comment}&rdquo;
                   </p>
 
                   {/* Customer Info */}
@@ -456,6 +378,8 @@ export default function Home() {
                       <div className="text-xs text-blue-600 font-medium">{testimonial.service}</div>
                     </div>
                   </div>
+
+
                 </div>
               ))}
             </div>
@@ -481,6 +405,8 @@ export default function Home() {
                 </div>
               </div>
             </div>
+
+
           </div>
         </section>
 
@@ -544,6 +470,7 @@ export default function Home() {
           </div>
         </section>
 
+
         {/* Final Trust Section */}
         <section className="py-8 md:py-16 bg-gray-900 text-white">
           <div className="container mx-auto px-4 text-center">
@@ -570,6 +497,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+
       </main>
       <Footer />
     </>
