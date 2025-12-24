@@ -188,48 +188,34 @@ export default function Header() {
   const lastScrollY = useRef(0)
   const scrollTimeout = useRef<NodeJS.Timeout>()
 
-  // Improved scroll behavior
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY
-      
-      // Clear any existing timeout
-      if (scrollTimeout.current) {
-        clearTimeout(scrollTimeout.current)
-      }
-
-      // Show/hide header based on scroll direction
-      if (currentScrollY > lastScrollY.current && currentScrollY > 80) {
-        // Scrolling DOWN - hide header
-        setIsHeaderVisible(false)
-      } else if (currentScrollY < lastScrollY.current) {
-        // Scrolling UP - show header
-        setIsHeaderVisible(true)
-      }
-
-      // Background effect based on scroll position
-      setIsScrolled(currentScrollY > 30)
-      
-      // Update last scroll position
-      lastScrollY.current = currentScrollY
-
-      // Set timeout to ensure header stays visible after scrolling stops
-      scrollTimeout.current = setTimeout(() => {
-        setIsHeaderVisible(true)
-      }, 1200)
-    }
-
-    // Add scroll event listener
-    window.addEventListener('scroll', handleScroll, { passive: true })
+// In your Header component, simplify the mobile scroll behavior
+useEffect(() => {
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+    setIsScrolled(currentScrollY > 10);
     
-    // Cleanup
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-      if (scrollTimeout.current) {
-        clearTimeout(scrollTimeout.current)
-      }
+    // SIMPLIFY: Always show header on mobile
+    if (window.innerWidth < 768) {
+      setIsHeaderVisible(true);
+      return;
     }
-  }, [])
+    
+    // Original logic for desktop only
+    if (currentScrollY > lastScrollY.current && currentScrollY > 80) {
+      setIsHeaderVisible(false);
+    } else if (currentScrollY < lastScrollY.current) {
+      setIsHeaderVisible(true);
+    }
+    
+    lastScrollY.current = currentScrollY;
+  };
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  
+  return () => {
+    window.removeEventListener('scroll', handleScroll);
+  };
+}, []);
 
   const navigation = [
     { 
