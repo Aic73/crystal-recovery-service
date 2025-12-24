@@ -16,9 +16,9 @@ import {
 } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: "Contact Dubai Recovery | 24/7 Emergency Car Recovery Service | +971 56 344 6682",
-  description: "Contact Dubai Recovery for 24/7 emergency car recovery service. Call +971 56 344 6682, email, or use our contact form. Fast response across Dubai.",
-  keywords: "contact car recovery dubai, emergency towing contact, dubai recovery phone number, car breakdown help dubai",
+  title: "Contact Crystal Recovery Service | 24/7 Emergency Car Recovery Service | +971 56 344 6682",
+  description: "Contact Crystal Recovery Service for 24/7 emergency car recovery service. Call +971 56 344 6682, email, or use our contact form. Fast response across Dubai.",
+  keywords: "contact car recovery dubai, emergency towing contact, Crystal Recovery Service phone number, car breakdown help dubai",
 }
 
 const contactMethods = [
@@ -35,8 +35,8 @@ const contactMethods = [
     icon: <Mail className="w-6 h-6" />,
     title: "Email Us",
     description: "General inquiries",
-    details: "info@dubairecovery.com",
-    link: "mailto:info@dubairecovery.com",
+    details: "info@CrystalRecovery.com",
+    link: "mailto:info@CrystalRecovery.com",
     color: "from-blue-500 to-blue-600",
     emergency: false
   },
@@ -76,7 +76,7 @@ export default function ContactPage() {
           <div className="container mx-auto px-4">
             <div className="text-center max-w-4xl mx-auto">
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                Contact Dubai Recovery
+                Contact Crystal Recovery Service
               </h1>
               <p className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed">
                 24/7 emergency car recovery service. We're here to help you anywhere in Dubai, anytime.
@@ -205,7 +205,7 @@ export default function ContactPage() {
 
                 {/* Why Contact Us */}
                 <div className="bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-2xl p-8">
-                  <h3 className="text-2xl font-bold mb-4">Why Contact Dubai Recovery?</h3>
+                  <h3 className="text-2xl font-bold mb-4">Why Contact Crystal Recovery Service?</h3>
                   <div className="space-y-3">
                     {[
                       "30-minute average response time across Dubai",

@@ -1,5 +1,5 @@
 {
-  "name": "dubai-recovery-247",
+  "name": "crystal-recovery-service",
   "version": "1.0.0",
   "description": "Professional 24/7 car recovery and towing services in Dubai. Emergency roadside assistance, vehicle towing, jump start, tire change, and fuel delivery across all Dubai areas.",
   "private": true,
@@ -256,6 +256,6 @@
     "heavy equipment towing dubai",
     "cheap emergency towing dubai"
   ],
-  "author": "Dubai Recovery 24/7 <info@dubairecovery.com>",
+  "author": "Crystal Recovery Service 24/7 <info@crystalrecovery.com>",
   "license": "MIT"
 }

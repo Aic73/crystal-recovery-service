@@ -364,7 +364,7 @@ export default function Header() {
                   <div className="w-16 h-16 relative">
                     <Image
                       src="/Logo.webp"
-                      alt="Dubai Recovery 24/7"
+                      alt="Crystal Recovery Service 24/7"
                       width={100}
                       height={100}
                       className="rounded-lg object-cover"
@@ -384,7 +384,7 @@ export default function Header() {
                     className="text-lg font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent"
                     whileHover={{ scale: 1.01 }}
                   >
-                    Dubai Recovery
+                    Crystal Recovery Service
                   </motion.h1>
                   <div className="text-[10px] font-semibold text-red-500 flex items-center space-x-1">
                     <div className="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse" />

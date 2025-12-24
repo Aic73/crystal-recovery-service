@@ -47,7 +47,7 @@ export default function Footer() {
                 <span className="text-white font-bold text-lg">DR</span>
               </div>
               <div>
-                <h3 className="text-xl font-bold">Dubai Recovery</h3>
+                <h3 className="text-xl font-bold">Crystal Recovery Service</h3>
                 <p className="text-red-400 text-sm font-semibold">24/7 Emergency Service</p>
               </div>
             </div>
@@ -131,10 +131,10 @@ export default function Footer() {
                 <div>
                   <p className="text-sm text-gray-300">Email Us</p>
                   <a 
-                    href="mailto:info@dubairecovery247.com" 
+                    href="mailto:info@CrystalRecovery247.com" 
                     className="text-white font-semibold hover:text-blue-400 transition-colors text-sm"
                   >
-                    info@dubairecovery247.com
+                    info@CrystalRecovery247.com
                   </a>
                 </div>
               </div>
@@ -183,7 +183,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             {/* Copyright */}
             <div className="text-gray-400 text-sm">
-              © {currentYear} Dubai Recovery 24/7. All rights reserved.
+              © {currentYear} Crystal Recovery Service 24/7. All rights reserved.
             </div>
 
             {/* Emergency CTA */}

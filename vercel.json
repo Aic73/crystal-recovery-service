@@ -1,5 +1,7 @@
 {
-  "buildCommand": "next build",
+  "name": "crystal-recovery-service",
+  "buildCommand": "npm run build",
   "outputDirectory": ".next",
-  "framework": "nextjs"
+  "devCommand": "npm run dev",
+  "installCommand": "npm install"
 }

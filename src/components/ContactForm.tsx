@@ -82,7 +82,7 @@ const handleSubmit = async (e: React.FormEvent) => {
             Message Sent Successfully!
           </h3>
           <p className="text-gray-600 mb-4">
-            Thank you for contacting Dubai Recovery. We'll get back to you within 5 minutes.
+            Thank you for contacting Crystal Recovery Service. We'll get back to you within 5 minutes.
           </p>
           <div className="bg-green-50 border border-green-200 rounded-xl p-4">
             <p className="text-green-700 font-semibold">

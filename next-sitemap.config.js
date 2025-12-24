@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://dubairecovery247.com',
+  siteUrl: 'https://crystalrecovery.com',
   generateRobotsTxt: true,
   robotsTxtOptions: {
     policies: [
@@ -10,7 +10,7 @@ module.exports = {
       },
     ],
     additionalSitemaps: [
-      'https://dubairecovery247.com/sitemap.xml',
+      'https://crystalrecovery.com/sitemap.xml',
     ],
   },
   changefreq: 'weekly',

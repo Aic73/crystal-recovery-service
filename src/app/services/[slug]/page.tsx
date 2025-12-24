@@ -193,7 +193,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   
   if (!service) {
     return {
-      title: "Service Not Found | Dubai Recovery",
+      title: "Service Not Found | Crystal Recovery Service",
       description: "The requested service page was not found."
     }
   }
@@ -203,7 +203,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     description: service.fullDescription,
     keywords: `${service.title.toLowerCase()}, car recovery dubai, emergency service, ${service.slug.replace('-', ' ')}`,
     openGraph: {
-      title: `${service.title} | Dubai Recovery`,
+      title: `${service.title} | Crystal Recovery Service`,
       description: service.fullDescription.slice(0, 160),
       type: 'website',
     },
@@ -230,7 +230,7 @@ export default function ServiceDetail({ params }: { params: { slug: string } }) 
     description: service.fullDescription,
     provider: {
       '@type': 'AutoRepair',
-      name: 'Dubai Recovery 24/7',
+      name: 'Crystal Recovery Service 24/7',
       telephone: '+971-56-344-6682'
     },
     areaServed: 'Dubai',
@@ -432,7 +432,7 @@ export default function ServiceDetail({ params }: { params: { slug: string } }) 
         <section className="py-12 md:py-16 bg-white">
           <div className="container mx-auto px-4 text-center">
             <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-8">
-              Why Trust Dubai Recovery?
+              Why Trust Crystal Recovery Service?
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
               <div className="text-center p-6">

@@ -93,7 +93,7 @@ export function WhyChooseSection({ items = defaultItems, stats = defaultStats }:
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <Image
                 src="/images/team/trust-team.jpg"
-                alt="Dubai Recovery professional team with emergency tow truck"
+                alt="Crystal Recovery Service professional team with emergency tow truck"
                 width={600}
                 height={400}
                 className="w-full h-auto object-cover"
@@ -123,7 +123,7 @@ export function WhyChooseSection({ items = defaultItems, stats = defaultStats }:
           >
             <motion.div variants={itemVariants}>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-4">
-                Why Choose <span className="text-blue-600">Dubai Recovery?</span>
+                Why Choose <span className="text-blue-600">Crystal Recovery Service?</span>
               </h2>
               <p className="text-lg md:text-xl text-gray-600">
                 We're committed to providing the fastest, safest, and most reliable car recovery service in Dubai
@@ -183,7 +183,7 @@ export function WhyChooseSection({ items = defaultItems, stats = defaultStats }:
               <a
                 href="tel:+971563446682"
                 className="flex-1 bg-red-500 hover:bg-red-600 text-white font-bold py-4 px-8 rounded-xl text-center transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-3 shadow-lg"
-                aria-label="Call Dubai Recovery emergency hotline"
+                aria-label="Call Crystal Recovery Service emergency hotline"
               >
                 <Phone className="w-6 h-6" />
                 <span>Call +971 56 344 6682</span>

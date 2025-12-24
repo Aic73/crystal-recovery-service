@@ -3,11 +3,12 @@ import { Inter, Poppins } from 'next/font/google'
 import './globals.css'
 import { siteConfig } from '@/lib/seo'
 import { LoadingProvider } from '@/contexts/LoadingContext'
-
 const inter = Inter({ 
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',
+  preload: false, // ⬅️ ADD THIS LINE - Prevents build-time fetch
+  fallback: ['system-ui', 'arial'] // ⬅️ ADD THIS LINE - Fallback fonts
 })
 
 const poppins = Poppins({
@@ -15,10 +16,12 @@ const poppins = Poppins({
   subsets: ['latin'],
   variable: '--font-poppins',
   display: 'swap',
+  preload: false, // ⬅️ ADD THIS LINE
+  fallback: ['system-ui', 'arial'] // ⬅️ ADD THIS LINE
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://dubairecovery.com'),
+  metadataBase: new URL('https://crystalrecovery.com'),
   title: {
     default: siteConfig.name,
     template: `%s | ${siteConfig.name}`,
@@ -64,7 +67,7 @@ export const metadata: Metadata = {
         url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: 'Dubai Recovery 24/7 - Professional Car Recovery Services in Dubai',
+        alt: 'Crystal Recovery Service - Professional Car Recovery Services in Dubai',
       },
     ],
   },
@@ -112,7 +115,7 @@ export default function RootLayout({
     description: siteConfig.description,
     url: siteConfig.url,
     telephone: '+971-56-344-6682',
-    email: 'info@dubairecovery.com',
+    email: 'info@CrystalRecovery.com',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Dubai',

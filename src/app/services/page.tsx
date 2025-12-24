@@ -362,7 +362,7 @@ export default function ServicesPage() {
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-                Why Choose Dubai Recovery?
+                Why Choose Crystal Recovery Service?
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                 We're committed to providing the fastest, safest, and most reliable car recovery service in Dubai

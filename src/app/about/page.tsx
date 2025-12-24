@@ -21,9 +21,9 @@ import {
 } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: "About Dubai Recovery | Trusted Car Recovery Service in Dubai | +971 56 344 6682",
-  description: "Learn about Dubai Recovery - Dubai's most trusted 24/7 car recovery service. Certified professionals, fast response, and 10,000+ satisfied customers.",
-  keywords: "about dubai recovery, car recovery company dubai, our story, certified recovery service, dubai towing company",
+  title: "About Crystal Recovery Service | Trusted Car Recovery Service in Dubai | +971 56 344 6682",
+  description: "Learn about Crystal Recovery Service - Dubai's Most Trusted Crystal Recovery Service 24/7 car recovery service. Certified professionals, fast response, and 10,000+ satisfied customers.",
+  keywords: "about Crystal Recovery Service, car recovery company dubai, our story, certified recovery service, dubai towing company",
 }
 
 const teamValues = [
@@ -35,7 +35,7 @@ const teamValues = [
   {
     icon: <Globe className="w-8 h-8" />,
     title: "Our Vision",
-    description: "To become Dubai's most trusted and preferred car recovery service, setting new standards in emergency roadside assistance."
+    description: "To become Dubai's Most Trusted Crystal Recovery Service and preferred car recovery service, setting new standards in emergency roadside assistance."
   },
   {
     icon: <Heart className="w-8 h-8" />,
@@ -67,7 +67,7 @@ const ourStory = [
     year: "2024",
     title: "Market Leadership",
     description: "Now serving 10,000+ customers with 15 recovery vehicles covering all Dubai areas.",
-    achievement: "Dubai's most trusted recovery service"
+    achievement: "Dubai's Most Trusted Crystal Recovery Service recovery service"
   }
 ]
 
@@ -113,10 +113,10 @@ export default function AboutPage() {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                About Dubai Recovery
+                About Crystal Recovery Service
               </h1>
               <p className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed">
-                Dubai's most trusted 24/7 car recovery service. Fast, reliable, and professional 
+                Dubai's Most Trusted Crystal Recovery Service 24/7 car recovery service. Fast, reliable, and professional 
                 emergency assistance when you need it most.
               </p>
               
@@ -165,7 +165,7 @@ export default function AboutPage() {
                 Our Journey
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                From humble beginnings to becoming Dubai's most trusted car recovery service
+                From humble beginnings to becoming Dubai's Most Trusted Crystal Recovery Service car recovery service
               </p>
             </div>
 
@@ -230,7 +230,7 @@ export default function AboutPage() {
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-                Why Choose Dubai Recovery?
+                Why Choose Crystal Recovery Service?
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                 We're not just another recovery service - we're your trusted partner on Dubai's roads
@@ -369,7 +369,7 @@ export default function AboutPage() {
               Ready to Experience the Difference?
             </h2>
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Join thousands of satisfied customers who trust Dubai Recovery for their emergency car recovery needs.
+              Join thousands of satisfied customers who trust Crystal Recovery Service for their emergency car recovery needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a 

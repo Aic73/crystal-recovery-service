@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   description: "🚨 Emergency car recovery service in Dubai. 24/7 towing, jump start, tire change, fuel delivery. Fast response within 30 minutes. Call +971 56 344 6682 now!",
   keywords: "car recovery dubai, towing service dubai, 24/7 breakdown service, emergency car recovery, dubai towing, roadside assistance dubai",
   alternates: {
-    canonical: 'https://dubairecovery.com',
+    canonical: 'https://crystalrecovery.com',
   },
   openGraph: {
     title: "24/7 Car Recovery Dubai | Emergency Towing & Roadside Assistance",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Dubai Recovery - 24/7 Emergency Car Recovery Services',
+        alt: 'Crystal Recovery Service - 24/7 Emergency Car Recovery Services',
       },
     ],
   },
@@ -47,9 +47,9 @@ export const metadata: Metadata = {
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'AutoRepair',
-  name: 'Dubai Recovery 24/7',
+  name: 'Crystal Recovery Service 24/7',
   description: '24/7 Emergency car recovery and roadside assistance services in Dubai',
-  url: 'https://dubairecovery.com',
+  url: 'https://crystalrecovery.com',
   telephone: '+971-56-344-6682',
   address: {
     '@type': 'PostalAddress',
@@ -199,7 +199,7 @@ const testimonials = [
     location: "Deira, Dubai",
     service: "Tire Change Service",
     rating: 5,
-    comment: "Got a flat tire on Sheikh Zayed Road during rush hour. Dubai Recovery came quickly and changed the tire professionally. Fair pricing and great service!",
+    comment: "Got a flat tire on Sheikh Zayed Road during rush hour. Crystal Recovery Service came quickly and changed the tire professionally. Fair pricing and great service!",
     avatar: "👨‍🔧",
     date: "2024-01-10"
   }
@@ -233,7 +233,7 @@ export default function Home() {
                 Our <span className="text-blue-600">Services</span>
               </h1>
               <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                Professional 24/7 car recovery and roadside assistance across Dubai
+                Professional 24/7 car recovery and roadside assistance across Dubai - Crystal Recovery Service
               </p>
             </div>
             
@@ -248,7 +248,7 @@ export default function Home() {
                     <div className="relative h-40 md:h-48 bg-gray-100 overflow-hidden">
                       <Image
                         src={service.image}
-                        alt={`${service.title} - Dubai Recovery`}
+                        alt={`${service.title} - Crystal Recovery Service`}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-300"
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -331,172 +331,357 @@ export default function Home() {
       <ServiceAreasSection showMap={true} />
 
         {/* Testimonials Section */}
-        <section className="py-12 md:py-20 bg-gradient-to-br from-blue-50 to-purple-50 relative overflow-hidden">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12 md:mb-16">
-              <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-4 md:mb-6">
-                Customer <span className="text-blue-600">Reviews</span>
-              </h2>
-              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                Read what our satisfied customers say about our car recovery services in Dubai
+      <section className="py-12 md:py-20 bg-gradient-to-br from-blue-50 to-purple-50 relative overflow-hidden">
+        <div className="container mx-auto px-4">
+    {/* SEO Optimized Heading */}
+    <div className="text-center mb-12 md:mb-16">
+      <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-4 md:mb-6">
+        Customer <span className="text-blue-600">Reviews</span>
+      </h2>
+      <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+        Read genuine testimonials from our satisfied customers across Dubai about our 24/7 car recovery services
+      </p>
+    </div>
+
+    {/* Mobile Slider & Desktop Grid */}
+    <div className="relative">
+      {/* Mobile Slider Container */}
+      <div className="md:hidden overflow-hidden">
+        <div className="flex snap-x snap-mandatory overflow-x-auto gap-4 pb-4 -mx-4 px-4 scrollbar-hide">
+          {testimonials.map((testimonial, index) => (
+            <div 
+              key={index}
+              className="flex-none w-[85vw] snap-center bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              itemScope
+              itemType="https://schema.org/Review"
+            >
+              {/* Rating Stars */}
+              <div className="flex items-center space-x-1 mb-4" itemProp="reviewRating" itemScope itemType="https://schema.org/Rating">
+                <meta itemProp="ratingValue" content={testimonial.rating.toString()} />
+                <meta itemProp="bestRating" content="5" />
+                {[...Array(5)].map((_, i) => (
+                  <Star 
+                    key={i} 
+                    className={`w-5 h-5 ${
+                      i < testimonial.rating ? 'text-yellow-400 fill-current' : 'text-gray-300'
+                    }`} 
+                  />
+                ))}
+              </div>
+
+              {/* Comment */}
+              <p className="text-base text-gray-600 italic mb-6 leading-relaxed" itemProp="reviewBody">
+                &ldquo;{testimonial.comment}&rdquo;
               </p>
-            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
-              {testimonials.map((testimonial, index) => (
-                <div 
-                  key={index}
-                  className="bg-white rounded-xl md:rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 group hover:transform hover:scale-105"
-                  itemScope
-                  itemType="https://schema.org/Review"
-                >
-                  {/* Rating */}
-                  <div className="flex items-center space-x-1 mb-3 md:mb-4" itemProp="reviewRating" itemScope itemType="https://schema.org/Rating">
-                    <meta itemProp="ratingValue" content={testimonial.rating.toString()} />
-                    <meta itemProp="bestRating" content="5" />
-                    {[...Array(5)].map((_, i) => (
-                      <Star 
-                        key={i} 
-                        className={`w-4 h-4 md:w-5 md:h-5 ${
-                          i < testimonial.rating ? 'text-yellow-400 fill-current' : 'text-gray-300'
-                        }`} 
-                      />
-                    ))}
-                  </div>
-
-                  {/* Comment */}
-                  <p className="text-sm md:text-base text-gray-600 italic mb-4 md:mb-6 leading-relaxed" itemProp="reviewBody">
-                    &ldquo;{testimonial.comment}&rdquo;
-                  </p>
-
-                  {/* Customer Info */}
-                  <div className="flex items-center space-x-3 md:space-x-4">
-                    <div className="text-2xl md:text-3xl">{testimonial.avatar}</div>
-                    <div itemProp="author" itemScope itemType="https://schema.org/Person">
-                      <div className="font-semibold text-gray-800 text-sm md:text-base" itemProp="name">{testimonial.name}</div>
-                      <div className="text-xs md:text-sm text-gray-500" itemProp="address">{testimonial.location}</div>
-                      <div className="text-xs text-blue-600 font-medium">{testimonial.service}</div>
-                    </div>
-                  </div>
-
-
+              {/* Customer Info */}
+              <div className="flex items-center space-x-4">
+                <div className="text-3xl">{testimonial.avatar}</div>
+                <div itemProp="author" itemScope itemType="https://schema.org/Person">
+                  <div className="font-semibold text-gray-800 text-base" itemProp="name">{testimonial.name}</div>
+                  <div className="text-sm text-gray-500" itemProp="address">{testimonial.location}</div>
+                  <div className="text-xs text-blue-600 font-medium">{testimonial.service}</div>
                 </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        {/* Mobile Slider Indicators */}
+        <div className="flex justify-center space-x-2 mt-6">
+          {testimonials.map((_, index) => (
+            <div 
+              key={index}
+              className="w-2 h-2 bg-gray-300 rounded-full transition-all duration-300"
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Desktop Grid */}
+      <div className="hidden md:grid grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {testimonials.map((testimonial, index) => (
+          <div 
+            key={index}
+            className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group hover:transform hover:scale-105 animate-fade-in-up"
+            style={{ animationDelay: `${index * 200}ms` }}
+            itemScope
+            itemType="https://schema.org/Review"
+          >
+            <div className="flex items-center space-x-1 mb-4" itemProp="reviewRating" itemScope itemType="https://schema.org/Rating">
+              <meta itemProp="ratingValue" content={testimonial.rating.toString()} />
+              <meta itemProp="bestRating" content="5" />
+              {[...Array(5)].map((_, i) => (
+                <Star 
+                  key={i} 
+                  className={`w-5 h-5 ${
+                    i < testimonial.rating ? 'text-yellow-400 fill-current animate-bounce' : 'text-gray-300'
+                  }`} 
+                  style={{ animationDelay: `${i * 100}ms` }}
+                />
               ))}
             </div>
 
-            {/* Trust Indicators */}
-            <div className="text-center mt-12 md:mt-16">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-4xl mx-auto">
-                <div className="text-center p-4 md:p-6 bg-white rounded-xl md:rounded-2xl shadow-sm">
-                  <div className="text-2xl md:text-3xl font-bold text-blue-600">98%</div>
-                  <div className="text-xs md:text-sm text-gray-600">Satisfaction Rate</div>
-                </div>
-                <div className="text-center p-4 md:p-6 bg-white rounded-xl md:rounded-2xl shadow-sm">
-                  <div className="text-2xl md:text-3xl font-bold text-green-600">24/7</div>
-                  <div className="text-xs md:text-sm text-gray-600">Service Available</div>
-                </div>
-                <div className="text-center p-4 md:p-6 bg-white rounded-xl md:rounded-2xl shadow-sm">
-                  <div className="text-2xl md:text-3xl font-bold text-yellow-600">4.9/5</div>
-                  <div className="text-xs md:text-sm text-gray-600">Google Rating</div>
-                </div>
-                <div className="text-center p-4 md:p-6 bg-white rounded-xl md:rounded-2xl shadow-sm">
-                  <div className="text-2xl md:text-3xl font-bold text-purple-600">10K+</div>
-                  <div className="text-xs md:text-sm text-gray-600">Happy Customers</div>
-                </div>
+            <p className="text-base text-gray-600 italic mb-6 leading-relaxed" itemProp="reviewBody">
+              &ldquo;{testimonial.comment}&rdquo;
+            </p>
+
+            <div className="flex items-center space-x-4">
+              <div className="text-3xl group-hover:scale-110 transition-transform duration-300">
+                {testimonial.avatar}
+              </div>
+              <div itemProp="author" itemScope itemType="https://schema.org/Person">
+                <div className="font-semibold text-gray-800 text-base" itemProp="name">{testimonial.name}</div>
+                <div className="text-sm text-gray-500" itemProp="address">{testimonial.location}</div>
+                <div className="text-xs text-blue-600 font-medium">{testimonial.service}</div>
               </div>
             </div>
-
-
           </div>
-        </section>
+        ))}
+      </div>
+    </div>
+
+    {/* Enhanced Trust Indicators with Animations */}
+    <div className="text-center mt-12 md:mt-16">
+      <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-8 md:mb-12">
+        Why Customers Trust Crystal Recovery Service
+      </h3>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-4xl mx-auto">
+        {[
+          { number: "98%", label: "Satisfaction Rate", color: "text-blue-600", icon: "😊" },
+          { number: "24/7", label: "Service Available", color: "text-green-600", icon: "🕒" },
+          { number: "4.9/5", label: "Google Rating", color: "text-yellow-600", icon: "⭐" },
+          { number: "10K+", label: "Happy Customers", color: "text-purple-600", icon: "👥" }
+        ].map((stat, index) => (
+          <div 
+            key={index}
+            className="text-center p-4 md:p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105 animate-fade-in"
+            style={{ animationDelay: `${index * 150}ms` }}
+          >
+            <div className="text-2xl mb-2">{stat.icon}</div>
+            <div className={`text-2xl md:text-3xl font-bold ${stat.color} mb-2`}>
+              {stat.number}
+            </div>
+            <div className="text-xs md:text-sm text-gray-600">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+      </div>
+      </section>
 
         {/* Emergency CTA Section */}
-        <section className="bg-gradient-to-r from-red-500 via-red-600 to-orange-500 py-12 md:py-20 relative overflow-hidden">
-          <div className="absolute inset-0">
-            <div className="absolute top-0 left-0 w-32 h-32 bg-white/10 rounded-full animate-pulse"></div>
-            <div className="absolute top-1/4 right-0 w-24 h-24 bg-white/10 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
-            <div className="absolute bottom-0 left-1/4 w-20 h-20 bg-white/10 rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
-          </div>
-          
-          <div className="container mx-auto px-4 text-center relative z-10">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6">
-                Need Emergency Car Recovery Right Now?
-              </h2>
-              <p className="text-lg md:text-xl text-white/90 mb-6 md:mb-8 leading-relaxed">
-                Our emergency response team is standing by 24/7 to help you anywhere in Dubai. 
-                Fast, reliable, and professional car recovery services when you need them most.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6 md:mb-8">
-                <a 
-                  href="tel:+971563446682" 
-                  className="w-full sm:w-auto bg-white text-red-500 font-bold py-3 md:py-4 px-6 md:px-8 rounded-xl md:rounded-2xl text-base md:text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-2xl inline-flex items-center justify-center space-x-2 md:space-x-3 group"
-                  aria-label="Call Dubai Recovery emergency hotline"
-                >
-                  <div className="relative">
-                    <Phone className="w-5 h-5 md:w-6 md:h-6 animate-pulse" />
-                    <div className="absolute inset-0 animate-ping">
-                      <Phone className="w-5 h-5 md:w-6 md:h-6 text-red-200" />
-                    </div>
-                  </div>
-                  <span className="font-mono text-base md:text-lg">+971 56 344 6682</span>
-                </a>
-                <Link 
-                  href="/booking" 
-                  className="w-full sm:w-auto bg-transparent border-2 border-white text-white font-bold py-3 md:py-4 px-6 md:px-8 rounded-xl md:rounded-2xl text-base md:text-lg hover:bg-white/10 transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center space-x-2 md:space-x-3"
-                  aria-label="Book car recovery service online"
-                >
-                  <Calendar className="w-5 h-5 md:w-6 md:h-6" />
-                  <span>Book Online Now</span>
-                </Link>
-              </div>
+<section className="py-16 md:py-24 relative overflow-hidden">
+  {/* Background Image with Gradient Overlay */}
+  <div className="absolute inset-0">
+    <div 
+      className="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-105"
+      style={{
+        backgroundImage: 'url("/images/emergency-recovery-background.jpg")',
+      }}
+    />
+    <div className="absolute inset-0 bg-gradient-to-r from-red-900/95 via-red-800/90 to-orange-900/90"></div>
+  </div>
+  
+  {/* Animated Background Elements */}
+  <div className="absolute inset-0 overflow-hidden">
+    <div className="absolute -top-12 -left-12 w-24 h-24 bg-white/10 rounded-full animate-pulse"></div>
+    <div className="absolute top-1/3 -right-6 w-16 h-16 bg-white/10 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+    <div className="absolute bottom-1/4 left-1/3 w-20 h-20 bg-white/10 rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
+    <div className="absolute top-3/4 right-1/4 w-12 h-12 bg-white/10 rounded-full animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+  </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 max-w-2xl mx-auto">
-                <div className="flex items-center justify-center space-x-2 text-white/90">
-                  <Clock className="w-4 h-4 md:w-5 md:h-5 text-green-300" />
-                  <span className="text-xs md:text-sm">30 Min Response</span>
-                </div>
-                <div className="flex items-center justify-center space-x-2 text-white/90">
-                  <Shield className="w-4 h-4 md:w-5 md:h-5 text-blue-300" />
-                  <span className="text-xs md:text-sm">Certified Experts</span>
-                </div>
-                <div className="flex items-center justify-center space-x-2 text-white/90">
-                  <MapPin className="w-4 h-4 md:w-5 md:h-5 text-yellow-300" />
-                  <span className="text-xs md:text-sm">All Dubai Areas</span>
-                </div>
-              </div>
+  {/* Floating Emergency Icon */}
+  <div className="absolute top-8 right-8 md:top-12 md:right-12 animate-bounce">
+    <div className="bg-white/20 backdrop-blur-sm rounded-full p-3 md:p-4">
+      <Phone className="w-6 h-6 md:w-8 md:h-8 text-white animate-pulse" />
+    </div>
+  </div>
+
+  <div className="container mx-auto px-4 text-center relative z-10">
+    <div className="max-w-5xl mx-auto">
+      {/* Main Heading */}
+      <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 md:mb-8 animate-fade-in-up">
+        <span className="text-red-300">Emergency</span> Car Recovery Service
+        <br />
+        <span className="text-2xl md:text-4xl lg:text-5xl text-yellow-300">Available 24/7 Across Dubai</span>
+      </h2>
+      
+      {/* Description */}
+      <p className="text-lg md:text-xl text-white/90 mb-8 md:mb-12 leading-relaxed max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: '200ms' }}>
+        Stranded on the road? Our rapid response team is dispatched immediately. 
+        Average <strong className="text-green-300">30-minute arrival</strong> across all Dubai areas. 
+        Professional, certified technicians ready to help you 24 hours a day.
+      </p>
+
+      {/* Emergency Contact Buttons */}
+      <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center mb-8 md:mb-12 animate-fade-in-up" style={{ animationDelay: '400ms' }}>
+        {/* Primary Call Button */}
+        <a 
+          href="tel:+971563446682" 
+          className="group w-full sm:w-auto bg-white text-red-600 hover:bg-gray-50 font-bold py-4 md:py-5 px-6 md:px-10 rounded-2xl text-lg md:text-xl transition-all duration-300 transform hover:scale-105 shadow-2xl inline-flex items-center justify-center space-x-3 md:space-x-4"
+          aria-label="Call Crystal Recovery Service emergency hotline +971 56 344 6682"
+        >
+          <div className="relative">
+            <Phone className="w-6 h-6 md:w-7 md:h-7 animate-pulse group-hover:animate-none" />
+            <div className="absolute inset-0 animate-ping">
+              <Phone className="w-6 h-6 md:w-7 md:h-7 text-red-200" />
             </div>
           </div>
-        </section>
+          <div className="text-left">
+            <div className="text-xs md:text-sm text-gray-500 font-normal">Call Now</div>
+            <div className="font-mono text-base md:text-lg lg:text-xl">+971 56 344 6682</div>
+          </div>
+        </a>
+
+        {/* Secondary Booking Button */}
+        <Link 
+          href="/booking" 
+          className="group w-full sm:w-auto bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold py-4 md:py-5 px-6 md:px-10 rounded-2xl text-lg md:text-xl transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center space-x-3 md:space-x-4"
+          aria-label="Book emergency car recovery service online"
+        >
+          <Calendar className="w-6 h-6 md:w-7 md:h-7 group-hover:scale-110 transition-transform" />
+          <div className="text-left">
+            <div className="text-xs md:text-sm text-white/80 font-normal">Online Booking</div>
+            <div>Schedule Service</div>
+          </div>
+        </Link>
+      </div>
+
+      {/* Trust Features Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-8 max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: '600ms' }}>
+        {[
+          {
+            icon: <Clock className="w-5 h-5 md:w-6 md:h-6 text-green-300" />,
+            text: "30 Min Response",
+            subtext: "Average Arrival Time"
+          },
+          {
+            icon: <Shield className="w-5 h-5 md:w-6 md:h-6 text-blue-300" />,
+            text: "Certified Experts",
+            subtext: "Professional Technicians"
+          },
+          {
+            icon: <MapPin className="w-5 h-5 md:w-6 md:h-6 text-yellow-300" />,
+            text: "All Dubai Areas",
+            subtext: "Complete Coverage"
+          }
+        ].map((feature, index) => (
+          <div 
+            key={index}
+            className="flex items-center justify-center space-x-3 text-white/90 bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/15 transition-all duration-300"
+          >
+            {feature.icon}
+            <div className="text-left">
+              <div className="text-sm md:text-base font-semibold">{feature.text}</div>
+              <div className="text-xs text-white/70">{feature.subtext}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Additional Emergency Info */}
+      <div className="mt-8 md:mt-12 text-center animate-fade-in-up" style={{ animationDelay: '800ms' }}>
+        <div className="inline-flex flex-wrap justify-center gap-4 md:gap-8 text-white/80 text-sm md:text-base">
+          <div className="flex items-center space-x-2">
+            <CheckCircle2 className="w-4 h-4 text-green-300" />
+            <span>No Hidden Charges</span>
+          </div>
+          <div className="flex items-center space-x-2">
+            <CheckCircle2 className="w-4 h-4 text-green-300" />
+            <span>All Vehicle Types</span>
+          </div>
+          <div className="flex items-center space-x-2">
+            <CheckCircle2 className="w-4 h-4 text-green-300" />
+            <span>Insurance Support</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
         {/* Final Trust Section */}
-        <section className="py-8 md:py-16 bg-gray-900 text-white">
-          <div className="container mx-auto px-4 text-center">
-            <h3 className="text-xl md:text-3xl font-bold mb-4 md:mb-6">
-              Dubai's Most Trusted Car Recovery Service
-            </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-4xl mx-auto">
-              <div className="text-center">
-                <div className="text-lg md:text-2xl font-bold text-green-400">24/7</div>
-                <div className="text-gray-400 text-xs md:text-sm">Emergency Service</div>
-              </div>
-              <div className="text-center">
-                <div className="text-lg md:text-2xl font-bold text-blue-400">30min</div>
-                <div className="text-gray-400 text-xs md:text-sm">Avg. Response</div>
-              </div>
-              <div className="text-center">
-                <div className="text-lg md:text-2xl font-bold text-yellow-400">4.9/5</div>
-                <div className="text-gray-400 text-xs md:text-sm">Customer Rating</div>
-              </div>
-              <div className="text-center">
-                <div className="text-lg md:text-2xl font-bold text-purple-400">10K+</div>
-                <div className="text-gray-400 text-xs md:text-sm">Satisfied Customers</div>
-              </div>
-            </div>
+{/* Enhanced Final Trust Section */}
+<section className="py-12 md:py-20 bg-gradient-to-br from-gray-900 to-blue-900 relative overflow-hidden">
+  {/* Background Pattern */}
+  <div className="absolute inset-0 opacity-10">
+    <div className="absolute inset-0" style={{
+      backgroundImage: `radial-gradient(circle at 25px 25px, rgba(255,255,255,0.3) 2%, transparent 0%), radial-gradient(circle at 75px 75px, rgba(255,255,255,0.2) 2%, transparent 0%)`,
+      backgroundSize: '100px 100px'
+    }}></div>
+  </div>
+
+  <div className="container mx-auto px-4 text-center relative z-10">
+    <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 md:mb-8">
+      Dubai's Most <span className="text-blue-400">Trusted</span> Recovery Service
+    </h2>
+    
+    <p className="text-lg md:text-xl text-gray-300 mb-12 md:mb-16 max-w-3xl mx-auto leading-relaxed">
+      Join thousands of satisfied customers who trust us for reliable 24/7 emergency car recovery across Dubai
+    </p>
+
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-5xl mx-auto">
+      {[
+        { 
+          number: "24/7", 
+          label: "Emergency Service", 
+          color: "text-green-400",
+          icon: <Shield className="w-8 h-8 md:w-12 md:h-12 text-green-400 mx-auto mb-4" />,
+          delay: "400ms"
+        },
+        { 
+          number: "30min", 
+          label: "Avg. Response Time", 
+          color: "text-blue-400",
+          icon: <Clock className="w-8 h-8 md:w-12 md:h-12 text-blue-400 mx-auto mb-4" />,
+          delay: "600ms"
+        },
+        { 
+          number: "4.9/5", 
+          label: "Customer Rating", 
+          color: "text-yellow-400",
+          icon: <Star className="w-8 h-8 md:w-12 md:h-12 text-yellow-400 mx-auto mb-4" />,
+          delay: "800ms"
+        },
+        { 
+          number: "10K+", 
+          label: "Satisfied Customers", 
+          color: "text-purple-400",
+          icon: <Users className="w-8 h-8 md:w-12 md:h-12 text-purple-400 mx-auto mb-4" />,
+          delay: "1000ms"
+        }
+      ].map((stat, index) => (
+        <div 
+          key={index}
+          className="text-center p-6 md:p-8 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300 transform hover:scale-105 animate-fade-in-up group"
+          style={{ animationDelay: stat.delay }}
+        >
+          <div className="group-hover:scale-110 transition-transform duration-300">
+            {stat.icon}
           </div>
-        </section>
+          <div className={`text-2xl md:text-4xl font-bold ${stat.color} mb-2 md:mb-3`}>
+            {stat.number}
+          </div>
+          <div className="text-gray-300 text-sm md:text-base font-medium">{stat.label}</div>
+        </div>
+      ))}
+    </div>
+
+    {/* Final CTA */}
+    <div className="mt-12 md:mt-16 animate-fade-in-up" style={{ animationDelay: '1200ms' }}>
+      <a 
+        href="tel:+971563446682"
+        className="inline-flex items-center space-x-3 bg-red-500 hover:bg-red-600 text-white font-bold py-4 px-8 rounded-2xl text-lg md:text-xl transition-all duration-300 transform hover:scale-105 shadow-2xl"
+      >
+        <Phone className="w-6 h-6 animate-pulse" />
+        <span>Call Now: +971 56 344 6682</span>
+      </a>
+    </div>
+  </div>
+</section>
+
 
       </main>
       <Footer />
